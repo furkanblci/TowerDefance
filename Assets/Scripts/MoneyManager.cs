@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,17 +7,18 @@ public class MoneyManager : MonoBehaviour
 {
     public static MoneyManager instance;
     public int currentMoney;
-    void Start()
+
+    private void Awake()
     {
         instance = this;
-        
-    }
-    
-    void Update()
-    {
-        
     }
 
+    void Start()
+    {
+        UIController.instance.goldText.text = currentMoney.ToString();
+
+    }
+    
     public void GiveMoney(int amountToGive)
     {
         currentMoney += amountToGive;
@@ -32,7 +34,7 @@ public class MoneyManager : MonoBehaviour
             Debug.Log("Spent "+amountToSpend);
             currentMoney -= amountToSpend;
         }
-
+        UIController.instance.goldText.text = currentMoney.ToString();
         return canSpend;
     }
     

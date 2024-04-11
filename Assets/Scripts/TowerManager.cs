@@ -36,6 +36,7 @@ public class TowerManager : MonoBehaviour
             else
             {
                 indicator.gameObject.SetActive(true);
+                UIController.instance.notEnaughtMoneyWarning.SetActive(MoneyManager.instance.currentMoney < activeTower.cost);
 
 
 
@@ -47,6 +48,8 @@ public class TowerManager : MonoBehaviour
 
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
                         indicator.gameObject.SetActive(false);
+                        
+                        UIController.instance.notEnaughtMoneyWarning.SetActive(false);
                     }
                 }
             }
