@@ -14,6 +14,8 @@ public class Tower : MonoBehaviour
    private float checkCounter;
    public float checkTime = .2f;
 
+   [HideInInspector]
+   public bool enemiesUpdated;
 
    private void Start()
    {
@@ -22,6 +24,8 @@ public class Tower : MonoBehaviour
 
    private void Update()
    {
+      enemiesUpdated = false;
+      
       checkCounter -= Time.deltaTime;
       if (checkCounter <= 0)
       {
@@ -33,7 +37,9 @@ public class Tower : MonoBehaviour
          foreach (Collider col in colliderInRange)
          {
             enemiesInRange.Add(col.GetComponent<EnemyController>());
-         }  
+         }
+
+         enemiesUpdated = true;
       }
    }
 }
