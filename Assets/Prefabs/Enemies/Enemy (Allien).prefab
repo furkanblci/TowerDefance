@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  speedMod: 1
   timeBetweenAttacks: 0.5
   damagePerAttack: 1
   target: {fileID: 0}
@@ -89,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 15
   healthBar: {fileID: 5061360738335376206}
+  moneyOndeath: 50
 --- !u!1 &1949462025454698279
 GameObject:
   m_ObjectHideFlags: 0

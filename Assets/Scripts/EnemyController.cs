@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField]private float moveSpeed=3.5f;
+    public float speedMod=1f;
     [SerializeField]private float timeBetweenAttacks, damagePerAttack;
     [SerializeField]private Transform target;
     
@@ -40,7 +41,7 @@ public class EnemyController : MonoBehaviour
             {
                 transform.LookAt(thePath.Points[currentPoint].position);
             
-                transform.position=Vector3.MoveTowards(transform.position,thePath.Points[currentPoint].position,moveSpeed*Time.deltaTime); //takip kodu
+                transform.position=Vector3.MoveTowards(transform.position,thePath.Points[currentPoint].position,moveSpeed*Time.deltaTime*speedMod); //takip kodu
 
                 if (Vector3.Distance(transform.position,thePath.Points[currentPoint].position) < 0.1f)
                 {
@@ -58,7 +59,7 @@ public class EnemyController : MonoBehaviour
             else
             {
                 transform.position = Vector3.MoveTowards(transform.position,
-                    theCastle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime);
+                    theCastle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime * speedMod);
             
                 attackCounter -= Time.deltaTime;
                 if (attackCounter <= 0 )
