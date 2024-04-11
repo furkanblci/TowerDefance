@@ -7,6 +7,7 @@ public class EnemyHealthController : MonoBehaviour
 {
     public float totalHealth;
     public Slider healthBar;
+    public int moneyOndeath = 50;
     void Start()
     {
         healthBar.maxValue = totalHealth;
@@ -26,6 +27,8 @@ public class EnemyHealthController : MonoBehaviour
         {
             totalHealth = 0;
             Destroy(gameObject);
+            MoneyManager.instance.GiveMoney(moneyOndeath);
+                
                 
         }
 

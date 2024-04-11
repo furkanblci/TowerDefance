@@ -17,6 +17,10 @@ public class Tower : MonoBehaviour
    [HideInInspector]
    public bool enemiesUpdated;
 
+   public GameObject rangeModel;
+
+   public int cost = 100;
+
    private void Start()
    {
       checkCounter = checkTime;

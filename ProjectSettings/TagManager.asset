@@ -14,11 +14,11 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Tower
+  - Castle
+  - Path
+  - ProjectTile
   - 
   - 
   - 
