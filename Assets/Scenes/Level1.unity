@@ -1642,7 +1642,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2252,6 +2252,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6842849, y: 0.19999999, z: 0.99999994}
   m_Center: {x: 0, y: 0.099999994, z: -0.000000029802322}
+--- !u!1 &1426589720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426589721}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426589721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426589720}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.79, y: 0.787, z: -0.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430054399
 GameObject:
   m_ObjectHideFlags: 0
@@ -4032,6 +4063,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5170551744565089701, guid: 203d41307b74a734a844ea6ab0f0f3eb, type: 3}
+      propertyPath: topSafePercent
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7347044689187070248, guid: 203d41307b74a734a844ea6ab0f0f3eb, type: 3}
       propertyPath: thePath
       value: 
@@ -4263,6 +4298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5490510509344805529, guid: 879419b4b2687bc40bfeeadf7039a2b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8870046187896622109, guid: 879419b4b2687bc40bfeeadf7039a2b4, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -4284,3 +4323,4 @@ SceneRoots:
   - {fileID: 3406589955419714380}
   - {fileID: 7264217985080643526}
   - {fileID: 3053604653181987759}
+  - {fileID: 1426589721}
