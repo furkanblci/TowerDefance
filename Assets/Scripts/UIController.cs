@@ -16,6 +16,8 @@ public class UIController : MonoBehaviour
     public string levelSelectScene, mainMenuScene;
     public GameObject pauseScreen;
     public TowerUpgradePanel towerUpgradePanel;
+
+    public TMP_Text waveText;
     private void Awake()
     {
         instance = this;

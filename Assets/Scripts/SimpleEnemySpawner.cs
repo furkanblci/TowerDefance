@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SimpleEnemySpawner : MonoBehaviour
 {
-   public EnemyController enemyToSpawn;
+   //public EnemyController enemyToSpawn;
+   public EnemyController[] enemiesToSpawn;
    [SerializeField] private Transform spawnPoint;
    [SerializeField] private float timeBetweenSpawns;
     public int amountToSpawn;
@@ -30,7 +32,7 @@ public class SimpleEnemySpawner : MonoBehaviour
          {
             spawnCounter = timeBetweenSpawns;
 
-            Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation).Setup(theCastle,thePath);
+            Instantiate(enemiesToSpawn[Random.Range(0,enemiesToSpawn.Length)], spawnPoint.position, spawnPoint.rotation).Setup(theCastle,thePath);
 
             amountToSpawn--;
          }

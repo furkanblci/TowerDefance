@@ -57,7 +57,7 @@ MonoBehaviour:
     m_Bits: 1792
   topSafePercent: 15
   selectedTower: {fileID: 0}
-  selectedTowerEffect: {fileID: 0}
+  selectedTowerEffect: {fileID: 2536510050423727756}
 --- !u!1 &2536510050423727756
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.77
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -227,7 +227,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5.01
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -345,7 +345,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.47
+      scalar: 1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5081,6 +5081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2137461187061308573}
   - component: {fileID: 7347044689187070248}
+  - component: {fileID: 2542349361928547633}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -5111,17 +5112,64 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6460825961519923771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5edd6a5bbd58f5e4abfc2486864aa00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 4807402435288751577, guid: 683837cb8808be146b488772a9de794f, type: 3}
+  enemiesToSpawn:
+  - {fileID: 4807402435288751577, guid: 683837cb8808be146b488772a9de794f, type: 3}
+  - {fileID: 1146452047722036314, guid: 6b8a4cedea0ba10428bb166f765d3faa, type: 3}
+  - {fileID: 8732538063729966481, guid: b34b44f3dbd3ae64fa9e261f493dfcd7, type: 3}
+  - {fileID: 3480697881313919990, guid: c7e1391e09f3f5b4db834d44b818ea54, type: 3}
+  - {fileID: 2561072864282903552, guid: 5840fc9f6f3301f44bb5d090581a8a7a, type: 3}
+  - {fileID: 228564653322808081, guid: f7627dc153bc2354fb6506adca6e9593, type: 3}
   spawnPoint: {fileID: 5463473879572669432}
-  timeBetweenSpawns: 1
-  amountToSpawn: 10
+  timeBetweenSpawns: 2
+  amountToSpawn: 100
   theCastle: {fileID: 0}
   thePath: {fileID: 0}
+--- !u!114 &2542349361928547633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6460825961519923771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87cf98965b482cb4bb91d368948e68b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavesToSpawn:
+  - enemySpawnOrder:
+    - {fileID: 4807402435288751577, guid: 683837cb8808be146b488772a9de794f, type: 3}
+    - {fileID: 4807402435288751577, guid: 683837cb8808be146b488772a9de794f, type: 3}
+    - {fileID: 1146452047722036314, guid: 6b8a4cedea0ba10428bb166f765d3faa, type: 3}
+    - {fileID: 8732538063729966481, guid: b34b44f3dbd3ae64fa9e261f493dfcd7, type: 3}
+    timeBetweenSpawns: 1
+    timeToNextWave: 10
+  - enemySpawnOrder:
+    - {fileID: 4807402435288751577, guid: 683837cb8808be146b488772a9de794f, type: 3}
+    - {fileID: 2561072864282903552, guid: 5840fc9f6f3301f44bb5d090581a8a7a, type: 3}
+    - {fileID: 4807402435288751577, guid: 683837cb8808be146b488772a9de794f, type: 3}
+    - {fileID: 2561072864282903552, guid: 5840fc9f6f3301f44bb5d090581a8a7a, type: 3}
+    - {fileID: 3480697881313919990, guid: c7e1391e09f3f5b4db834d44b818ea54, type: 3}
+    timeBetweenSpawns: 1
+    timeToNextWave: 10
+  - enemySpawnOrder:
+    - {fileID: 228564653322808081, guid: f7627dc153bc2354fb6506adca6e9593, type: 3}
+    - {fileID: 228564653322808081, guid: f7627dc153bc2354fb6506adca6e9593, type: 3}
+    - {fileID: 4807402435288751577, guid: 683837cb8808be146b488772a9de794f, type: 3}
+    - {fileID: 2561072864282903552, guid: 5840fc9f6f3301f44bb5d090581a8a7a, type: 3}
+    - {fileID: 3480697881313919990, guid: c7e1391e09f3f5b4db834d44b818ea54, type: 3}
+    timeBetweenSpawns: 1
+    timeToNextWave: 0
+  waitForFirstSpawn: 2
+  spawnPoint: {fileID: 5463473879572669432}
+  theCastle: {fileID: 0}
+  thePath: {fileID: 0}
+  shouldSpawn: 1
 --- !u!1 &8220907574261123956
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,4 +5249,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb92f212c43cc6b48861a5ae7c7ca58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 200
+  currentMoney: 5000
