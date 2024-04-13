@@ -5,7 +5,7 @@ using UnityEngine;
 public class BombTower : MonoBehaviour
 {
     private Tower theTower;
-    public float timeBetweenBombs;
+   // public float timeBetweenBombs;
     private float bombCounter;
 
     public Bomb theBomb;
@@ -16,7 +16,7 @@ public class BombTower : MonoBehaviour
     {
         theTower = GetComponent<Tower>();
 
-        bombCounter = timeBetweenBombs;
+        bombCounter = theTower.fireRate;
     }
 
 
@@ -41,7 +41,7 @@ public class BombTower : MonoBehaviour
                     }
                 }
 
-                bombCounter = timeBetweenBombs;
+                bombCounter = theTower.fireRate;
                 Bomb newBomb = Instantiate(theBomb, spawnPoint.position, Quaternion.identity);
                 newBomb.targetPoint = target.position;
             }

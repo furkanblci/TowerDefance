@@ -54,6 +54,8 @@ public class LevelManager : MonoBehaviour
             {
                 UIController.instance.levelFailPanel.SetActive(!levelVictory);
                 UIController.instance.levelComplatePanel.SetActive(levelVictory);
+                
+                UIController.instance.CloseTowerUpgradePanel();
                     
             }
         }

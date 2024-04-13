@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
 
     public string levelSelectScene, mainMenuScene;
     public GameObject pauseScreen;
+    public TowerUpgradePanel towerUpgradePanel;
     private void Awake()
     {
         instance = this;
@@ -65,5 +66,24 @@ public class UIController : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(LevelManager.instance.nextLevel);
+    }
+
+    public void OpenTowerUpgradePanel()
+    {
+        if (LevelManager.instance.levelActive)
+        {
+            towerUpgradePanel.gameObject.SetActive(true);
+            towerUpgradePanel.SetupPanel();
+        }
+    }
+    
+    public void CloseTowerUpgradePanel()
+    {
+        towerUpgradePanel.gameObject.SetActive(false);
+        TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+        TowerManager.instance.selectedTower = null;
+        TowerManager.instance.selectedTowerEffect.SetActive(false);
+        
+        notEnaughtMoneyWarning.SetActive(false);
     }
 }

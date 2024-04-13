@@ -7,6 +7,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
    public float range = 3f;
+   public float fireRate;
    public LayerMask whatIsEnemy;
    public Collider[] colliderInRange;
    public List<EnemyController> enemiesInRange = new List<EnemyController>();
@@ -21,9 +22,14 @@ public class Tower : MonoBehaviour
 
    public int cost = 100;
 
+   [HideInInspector] 
+   public TowerUpgradeController upgrader;
+   
    private void Start()
    {
       checkCounter = checkTime;
+
+      upgrader = GetComponent<TowerUpgradeController>();
    }
 
    private void Update()
@@ -45,5 +51,27 @@ public class Tower : MonoBehaviour
 
          enemiesUpdated = true;
       }
+
+      if (TowerManager.instance.selectedTower==this)
+      {
+         rangeModel.SetActive(true);
+         rangeModel.transform.localScale = new Vector3(range, 1f, range);
+      }
+      
+   }
+
+   private void OnMouseDown()
+   {
+      if (LevelManager.instance.levelActive)
+      {
+         if (TowerManager.instance.selectedTower != null)
+         {
+            TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+         }
+         TowerManager.instance.selectedTower = this;
+         UIController.instance.OpenTowerUpgradePanel();
+         TowerManager.instance.MoveTowerSelectionEffect();
+      }
+      
    }
 }

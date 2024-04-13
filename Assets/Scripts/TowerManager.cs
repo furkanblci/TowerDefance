@@ -12,6 +12,12 @@ public class TowerManager : MonoBehaviour
     public LayerMask whatIsPlacement,whatIsObstacle;
 
     public float topSafePercent = 15f;
+
+    [HideInInspector]
+    public Tower selectedTower;
+
+    public GameObject selectedTowerEffect;
+    
     void Start()
     {
         instance=this;
@@ -88,5 +94,14 @@ public class TowerManager : MonoBehaviour
         //location.y = 0.51f;
         return location;
         
+    }
+
+    public void MoveTowerSelectionEffect()
+    {
+        if (selectedTower != null)
+        {
+            selectedTowerEffect.transform.position = selectedTower.transform.position;
+            selectedTowerEffect.SetActive(true);
+        }
     }
 }
